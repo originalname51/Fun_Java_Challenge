@@ -4,7 +4,9 @@ Solution to the problem on http://devtechnology.com/dev-technology-code-jam/
 To get the program to run with values int A[] = {-1, 3,-4, 5, 1, -6, 2, 1} do the following:
 
 1) Navigate to folder with build.xml
+
 2) Make sure to have ant installed. On Ubuntu this can be done by sudo apt-get install ant
+
 3) Type ant run. This will display the number "1" which is the first index of a pivot for the above values.
 
 
