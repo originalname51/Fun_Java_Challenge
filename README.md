@@ -35,4 +35,5 @@ This has a complexity of 3N which is O(N) worst case.
 This has a space complexity of input storage + N (2N). Because it does not count the storage for input arguments it adds N of new storage.
 This will modify the input array elements.
 While the algorithm can be modified to easily return an array of pivot points this is outside of the scope of what is asked. Instead it returns the first pivot point of the array OR -1 if there is not a pivot point.
+This fails the edge case of sums greater 2,147,483,648 or less than -2,147,483,648.
 
