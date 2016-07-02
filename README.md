@@ -32,8 +32,12 @@ Algorithm is as follows:
 	 * 3) Iterate over the arrays. Matches between the two arrays are pivot points.
 	 * 
 This has a complexity of 3N, or O(N) worst case.
+
 This has a space complexity of input storage + 2N (3N), or O(N).
+
 This will modify the input array elements.
+
 While the algorithm can be modified to easily return an array of pivot points this is outside of the scope of what is asked. Instead it returns the first pivot point of the array OR -1 if there is not a pivot point.
+
 This can process numbers who sum above 2,147,483,647 or below -2,147,483,648.
 
