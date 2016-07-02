@@ -1,11 +1,11 @@
 package dev_website;
+
 public class Solution {
 
 	Solution() {
 	}
 	/*
-	 * This algorithm will modify the input array. 
-	 * It takes 2N space to complete, but only N additional space from input array. 
+	 * This algorithm will modify the input array.
 	 * 
 	 * It works the following way:
 	 * 
@@ -16,24 +16,30 @@ public class Solution {
 	 * The solution will return the first index of a equilibrium OR -1.
 	 * */
 	int solution(int arr[]) {
+		long zeroToN[]  = new long[arr.length];		
+				
+		for(int i = 0; i < arr.length;i++)
+		{
+			zeroToN[i] = arr[i];
+		}
 		
-		int second_array[] = new int[arr.length];
-		second_array[0] = arr[0];
+		long nToZero[] = new long[arr.length];
+		nToZero[0] = arr[0];
 
 		for (int i = 1; i < arr.length; i++) {
-			second_array[i] = second_array[i - 1] + arr[i];
+			nToZero[i] = nToZero[i - 1] + arr[i];
 		}
 		
 		/*
 		 * Length is -2 because the last number is unchanged and array is 0 indexed.
 		 */
 		for (int i = arr.length - 2; i > -1; i--) {
-			arr[i] = arr[i] + arr[i + 1];
+			zeroToN[i] = zeroToN[i] + zeroToN[i + 1];
 		}
 		
 		boolean hasPivot = false;
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == second_array[i]) {
+			if (zeroToN[i] == nToZero[i]) {
 				arr[0] = i;
 				hasPivot = true;
 				break;
