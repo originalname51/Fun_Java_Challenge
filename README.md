@@ -1,6 +1,13 @@
 # Fun_Java_Challenge
 Solution to the problem on http://devtechnology.com/dev-technology-code-jam/
 
+To get the program to run with values int A[] = {-1, 3,-4, 5, 1, -6, 2, 1} do the following:
+
+1) Navigate to folder with build.xml
+2) Make sure to have ant installed. On Ubuntu this can be done by sudo apt-get install ant
+3) Type ant run. This will display the number "1" which is the first index of a pivot for the above values.
+
+
 Problem:
 
 Write a function:
@@ -25,7 +32,7 @@ Algorithm is as follows:
 	 * 3) Iterate over the arrays. Matches between the two arrays are pivot points.
 	 * 
 This has a complexity of 3N which is O(N) worst case.
-This has a space complexity of input storage + N (2N). Because it does not count the storage for input arguments it is just N.
+This has a space complexity of input storage + N (2N). Because it does not count the storage for input arguments it adds N of new storage.
 This will modify the input array elements.
 While the algorithm can be modified to easily return an array of pivot points this is outside of the scope of what is asked. Instead it returns the first pivot point of the array OR -1 if there is not a pivot point.
 
