@@ -35,9 +35,9 @@ Algorithm is as follows:
 	 * 
 	 * The solution will return the first index of a equilibrium OR -1.
 	 * 
-This has a complexity of 3N, or O(N) worst case.
+This has a complexity of O(N) worst case.
 
-This has a space complexity of input storage + 2N (3N), or O(N).
+This has a space complexity of input storage O(N).
 
 This will modify the input array elements.
 
