@@ -27,12 +27,12 @@ public class Solution {
 		}
 		/*
 		 * Length is -2 because the last number is unchanged and array is 0 indexed.
-		 * Sum 0 -> N
+		 * Sum N->0
 		 */
 		for (int i = arr.length - 2; i > -1; i--) {
 			zeroToN[i] = zeroToN[i] + zeroToN[i + 1];
 		}		
-		// Sum N -> 0
+		// Sum 0 -> N
 		for (int i = 1; i < arr.length; i++) {
 			nToZero[i] = nToZero[i - 1] + arr[i];
 		}
