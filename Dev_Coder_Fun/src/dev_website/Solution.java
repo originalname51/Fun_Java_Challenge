@@ -17,26 +17,27 @@ public class Solution {
 	 * */
 	int solution(int arr[]) {
 		long zeroToN[]  = new long[arr.length];		
-				
+		long nToZero[] = new long[arr.length];
+		nToZero[0] = arr[0];		
+		
+		//To prevent overflow, copy array into long array.
 		for(int i = 0; i < arr.length;i++)
 		{
 			zeroToN[i] = arr[i];
 		}
-		
-		long nToZero[] = new long[arr.length];
-		nToZero[0] = arr[0];
-
+		/*
+		 * Length is -2 because the last number is unchanged and array is 0 indexed.
+		 * Sum 0 -> N
+		 */
+		for (int i = arr.length - 2; i > -1; i--) {
+			zeroToN[i] = zeroToN[i] + zeroToN[i + 1];
+		}		
+		// Sum N -> 0
 		for (int i = 1; i < arr.length; i++) {
 			nToZero[i] = nToZero[i - 1] + arr[i];
 		}
 		
-		/*
-		 * Length is -2 because the last number is unchanged and array is 0 indexed.
-		 */
-		for (int i = arr.length - 2; i > -1; i--) {
-			zeroToN[i] = zeroToN[i] + zeroToN[i + 1];
-		}
-		
+		//Compare 0-> and N -> 0 for matches.
 		boolean hasPivot = false;
 		for (int i = 0; i < arr.length; i++) {
 			if (zeroToN[i] == nToZero[i]) {
