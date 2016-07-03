@@ -16,31 +16,31 @@ public class Solution {
 	 * The solution will return the first index of a equilibrium OR -1.
 	 * */
 	int solution(int arr[]) {
-		long zeroToN[]  = new long[arr.length];		
-		long nToZero[]  = new long[arr.length];
-	             nToZero[0] = arr[0];		
+		long  nToZero[]  = new long[arr.length];		
+		long  zeroToN[]  = new long[arr.length];
+	              zeroToN[0] = arr[0];		
 		
 		//To prevent overflow, copy array into long array.
 		for(int i = 0; i < arr.length;i++)
 		{
-			zeroToN[i] = arr[i];
+			nToZero[i] = arr[i];
 		}
 		/*
 		 * Length is -2 because the last number is unchanged and array is 0 indexed.
 		 * Sum N->0
 		 */
 		for (int i = arr.length - 2; i > -1; i--) {
-			zeroToN[i] = zeroToN[i] + zeroToN[i + 1];
+			nToZero[i] = nToZero[i] + nToZero[i + 1];
 		}		
 		// Sum 0 -> N
 		for (int i = 1; i < arr.length; i++) {
-			nToZero[i] = nToZero[i - 1] + arr[i];
+			zeroToN[i] = zeroToN[i - 1] + arr[i];
 		}
 		
 		//Compare 0-> and N -> 0 for matches.
 		boolean hasPivot = false;
 		for (int i = 0; i < arr.length; i++) {
-			if (zeroToN[i] == nToZero[i]) {
+			if (nToZero[i] == zeroToN[i]) {
 				arr[0] = i;
 				hasPivot = true;
 				break;
