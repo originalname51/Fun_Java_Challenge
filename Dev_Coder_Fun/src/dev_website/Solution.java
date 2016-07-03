@@ -18,7 +18,7 @@ public class Solution {
 	int solution(int arr[]) {
 		long zeroToN[]  = new long[arr.length];		
 		long nToZero[]  = new long[arr.length];
-		nToZero[0] = arr[0];		
+	             nToZero[0] = arr[0];		
 		
 		//To prevent overflow, copy array into long array.
 		for(int i = 0; i < arr.length;i++)
