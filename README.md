@@ -29,9 +29,11 @@ Algorithm is as follows:
 
 	 * It works the following way:
 	 * 
-	 * 1) Sum numbers 0 - > N in one array. (e.g. 1,0,1,1 becomes 1,1,2,3).
-	 * 2) Sum numbers N - > 0 in a new Array of N numbers. (e.g. 1,0,1,1 becomes 3,2,2,1)
+	 * 1) Sum numbers N - > 0 in a new Array of N numbers. (e.g. 1,0,1,1 becomes 3,2,2,1).
+	 * 2) Sum numbers 0 - > N in one array. (e.g. 1,0,1,1 becomes 1,1,2,3).
 	 * 3) Iterate over the arrays. Matches between the two arrays are pivot points.
+	 * 
+	 * The solution will return the first index of a equilibrium OR -1.
 	 * 
 This has a complexity of 3N, or O(N) worst case.
 
