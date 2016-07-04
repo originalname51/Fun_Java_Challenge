@@ -12,6 +12,7 @@ public class Solution_two {
 	 * 1) Sum numbers
 	 * 2) Go from 0 -> N deleting along the way. Any matches are pivot points.
 	 * 
+	 * Solution is O(1) space complexity, O(N) time.
 	 * The solution will return the first index of a equilibrium OR -1.
 	 * */
 	int solution(int arr[]) 
