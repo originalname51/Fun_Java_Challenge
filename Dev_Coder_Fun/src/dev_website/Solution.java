@@ -1,3 +1,4 @@
+
 package dev_website;
 
 public class Solution {
@@ -27,12 +28,12 @@ public class Solution {
 			zeroToN[i] = arr[i];
 		}
 
-		for(int i = 1; i < arr.length; i++)
+		for(int i = 1; i < zeroToN.length; i++)
 		{
 			zeroToN[i] = zeroToN[i-1] + zeroToN[i];
 		}
 		
-		for(int i = arr.length-2; i > -1; i--)
+		for(int i = nToZero.length-2; i > -1; i--)
 		{
 			nToZero[i] = nToZero[i] + nToZero[i+1];
 		}
