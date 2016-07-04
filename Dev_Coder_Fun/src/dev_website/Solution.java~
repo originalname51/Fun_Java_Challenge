@@ -20,20 +20,22 @@ public class Solution {
 	{
 		long  nToZero[]  = new long[arr.length];		
 		long  zeroToN[]  = new long[arr.length];
-		long temp;
 		
-		temp = arr[0];
+		//To prevent overflow, copy array into long array.
+		for(int i = 0; i < arr.length;i++)
+		{
+			nToZero[i] = arr[i];
+			zeroToN[i] = arr[i];
+		}
+
 		for(int i = 1; i < zeroToN.length; i++)
 		{
-			zeroToN[i] = temp + arr[i];
-			temp = zeroToN[i];
+			zeroToN[i] = zeroToN[i-1] + zeroToN[i];
 		}
 		
-		temp = nToZero[nToZero.length-1] =  arr[arr.length-1];    //set the last value of nToZero as well as temp value to last array value.
-		for(int i = arr.length-2; i > -1; i--)
+		for(int i = nToZero.length-2; i > -1; i--)
 		{
-			nToZero[i] = temp + arr[i];
-			temp = nToZero[i];
+			nToZero[i] = nToZero[i] + nToZero[i+1];
 		}
 
 		//Compare 0-> and N -> 0 for matches.	
